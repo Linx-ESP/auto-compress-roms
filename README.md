@@ -10,7 +10,7 @@ I know barely enough for this, don't expect good code.
 - .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
-    - 
+    - Might need a (.nkit extract) or (.rvz to .iso) first
   - Dolphin: .rvz
     - Might need a (.nkit extract) or (.wbfs to .iso) first
     - Requires full dolphin installation, not possible in TrueNAS (therefor, not a priority)
@@ -51,8 +51,8 @@ I know barely enough for this, don't expect good code.
     - OpenPS2Loader
       - DVD
   - Wii
-      - Dolphin/rvz
-      - wbfs
+    - Dolphin/rvz
+    - wbfs
 - import (you could make into the downloads of *arr clients)
   - scripts
   - PS2
