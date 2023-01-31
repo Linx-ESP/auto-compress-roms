@@ -10,8 +10,10 @@ I know barely enough for this, don't expect good code.
 - .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
+    - 
   - Dolphin: .rvz
     - Might need a (.nkit extract) or (.wbfs to .iso) first
+    - Requires full dolphin installation, not possible in TrueNAS (therefor, not a priority)
   - CEMU: .wua
   - PS2: .zso
     - Might need a (.bin + .cue to .iso) first
@@ -42,13 +44,30 @@ I know barely enough for this, don't expect good code.
   - scripts
     - bash scripts (the originals from this repo)
     - compression scripts (the 3rd party ones)
-  
+
+### Example paths (simlar to *arr apps)
+- roms
+  - PS2
+    - OpenPS2Loader
+      - DVD
+  - Wii
+      - Dolphin/rvz
+      - wbfs
+- import (you could make into the downloads of *arr clients)
+  - scripts
+  - PS2
+  - Wii
+  - etc
+
 ### Dependencies  
 - By default
   - unp (p7zip-full, unzip, etc)
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
   - pip + lz4
+- Wii
+  - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
+  - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
   
 ### Too advanced for me :c (just wait... :D) 
 It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does it for importing games).  
