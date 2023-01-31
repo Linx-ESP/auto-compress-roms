@@ -8,12 +8,14 @@ I know barely enough for this, don't expect good code.
 ### What it should do:  
 - Take input file
 - .zip/.7z/.rar - extract
-- .iso - reforma/compress
-  - Wii: wbfs
-  - Dolphin: rvz
-  - CEMU: wad(?)
-  - PS2: zso
-  - Xbox 360: GoD
+- .iso - reformat/compress
+  - Wii: .wbfs
+  - Dolphin: .rvz
+    - Might need a (.nkit extract) or (.wbfs to .iso) first
+  - CEMU: .wua
+  - PS2: .zso
+    - Might need a (.bin + .cue to .iso) first
+  - Xbox 360: GoD (Games on Demand)
   - ...
 - Take compress rom and move it to the correct folder (meant for games over SMB and similar). 
 
