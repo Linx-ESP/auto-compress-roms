@@ -5,7 +5,7 @@ Aliases are your friends.
 I know barely enough for this, don't expect good code.  
 
 
-### What it should do  
+## What it's meant to do  
 - Take input file
 - .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
@@ -69,6 +69,6 @@ I know barely enough for this, don't expect good code.
   - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
   
-### Too advanced for me :c (just wait... :D) 
+## Too advanced for me :c (just wait... :D) 
 It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does it for importing games).  
 Run the scripts when a new file is added to the import folder (daily cronjob at night is other option if you don't need to have them compress as soon as possible).  
