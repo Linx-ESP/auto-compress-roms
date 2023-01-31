@@ -7,7 +7,7 @@ I know barely enough for this, don't expect good code.
 
 ### What it should do  
 - Take input file
-- .zip/.7z/.rar - extract
+- .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
   - Dolphin: .rvz
