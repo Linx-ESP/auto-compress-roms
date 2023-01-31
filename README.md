@@ -27,6 +27,7 @@ I know barely enough for this, don't expect good code.
   - Folder for imports (this has to be done per console for now, since it cannot identify what game is for what console).
 - Set the paths in the scripts (import, destination, and 3rd party scripts if needed).
   - By default it deletes the .iso, easy to change in the bash script.
+- Run the bash script.  
 
 ### Example paths  
 - roms
