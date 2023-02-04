@@ -20,7 +20,7 @@ I know barely enough for this, don't expect good code.
   - Xbox 360: GoD (Games on Demand)
   - ...
 - Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
-- Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no alternative).
+- Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no compressed format alternative).
 
 ### Current usage
 - Download the bash scripts, the 3rd party scripts (from original repo if possible, the ones in this act as a backup).
@@ -31,7 +31,21 @@ I know barely enough for this, don't expect good code.
   - By default it deletes the .iso, easy to change in the bash script.
 - Run the bash script.  
 
-### Example paths  
+### Recommended paths (similar to *arr apps)
+- roms
+  - PS2
+    - OpenPS2Loader
+      - DVD
+  - Wii
+    - Dolphin/rvz
+    - wbfs
+- import (you could make into the downloads of *arr clients)
+  - scripts (or elsewhere)
+  - PS2
+  - Wii
+  - ...  
+  
+### Self-contained paths
 - roms
   - PS2
     - import
@@ -43,22 +57,8 @@ I know barely enough for this, don't expect good code.
     - rvz
   - scripts
     - bash scripts (the originals from this repo)
-    - compression scripts (the 3rd party ones)
-
-### Example paths (simlar to *arr apps)
-- roms
-  - PS2
-    - OpenPS2Loader
-      - DVD
-  - Wii
-    - Dolphin/rvz
-    - wbfs
-- import (you could make into the downloads of *arr clients)
-  - scripts
-  - PS2
-  - Wii
-  - etc
-
+    - compression scripts (the 3rd party ones)  
+  
 ### Dependencies  
 - By default
   - unp (p7zip-full, unzip, etc)
@@ -69,6 +69,6 @@ I know barely enough for this, don't expect good code.
   - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
   
-## Too advanced for me :c (just wait... :D) 
-It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does it for importing games).  
+## In theory, could be implemented
+It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does something similar for importing games).  
 Run the scripts when a new file is added to the import folder (daily cronjob at night is other option if you don't need to have them compress as soon as possible).  
