@@ -69,7 +69,12 @@ I know barely enough for this, don't expect good code.
 - Wii
   - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
-  
+
+### TO DO
+- Install required dependencies
+- ¿Use system-wide $PATH?
+
+
 ## In theory, could be implemented
 It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does something similar for importing games).  
 Run the scripts when a new file is added to the import folder (daily cronjob at night is other option if you don't need to have them compress as soon as possible).  
