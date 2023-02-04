@@ -1,4 +1,4 @@
-# Doesnt convert iso to rvz. Doesnt delete any files.
+# Doesnt convert iso to rvz. Converts to wbfs.
 # Use quotes ("")
 import_dir="/path/original/files"
 rvz_dir="/path/for/rvz"
