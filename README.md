@@ -10,10 +10,9 @@ I know barely enough for this, don't expect good code.
 - .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
-    - Might need a (.nkit extract) or (.rvz to .iso) first
+    - Might need a (.nkit extract) or want (.rvz to .iso) first
   - Dolphin: .rvz [NOT possible in headless server]
-    - Might need a (.nkit extract) or (.wbfs to .iso) first
-    - Requires full dolphin installation, not possible in TrueNAS (therefor, not a priority)
+    - Might need a (.nkit extract) or want (.wbfs to .iso) first
   - CEMU: .wua
   - PS2: .zso
     - Might need a (.bin + .cue to .iso) first
