@@ -6,4 +6,10 @@ wbfs_dir="/path/for/wbfs"
 
 
 # Dont edit under this line
-cd "$import_dir"; unp *.*; mv *.rvz "$rvz_dir"; mv *.wbfs "$wbfs_dir"
+cd "$import_dir"; unp *.*; 
+
+# Nkit extract TO-DO
+
+for f in *.iso; do wit convert --wbfs "$f" .; done; 
+
+mv *.rvz "$rvz_dir"; mv *.wbfs "$wbfs_dir"
