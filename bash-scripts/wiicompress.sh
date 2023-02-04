@@ -6,10 +6,10 @@ wbfs_dir="/path/for/wbfs"
 
 
 # Dont edit under this line
-cd "$import_dir"; unp *.*; 
+cd "$import_dir"; unp *.*;      # Unpack all SHOULD do only unpackable formats and error if no dependencies should not stop the script.
 
 # Nkit extract TO-DO
 
-for f in *.iso; do wit convert --wbfs "$f" .; done; 
+for f in *.iso; do wit convert --wbfs "$f" .; done;       # Keeps the .wbfs in same place, move everything at the same time later
 
 mv *.rvz "$rvz_dir"; mv *.wbfs "$wbfs_dir"
