@@ -11,7 +11,7 @@ I know barely enough for this, don't expect good code.
 - .iso - reformat/compress
   - Wii: .wbfs
     - Might need a (.nkit extract) or (.rvz to .iso) first
-  - Dolphin: .rvz
+  - Dolphin: .rvz [NOT possible in headless server]
     - Might need a (.nkit extract) or (.wbfs to .iso) first
     - Requires full dolphin installation, not possible in TrueNAS (therefor, not a priority)
   - CEMU: .wua
