@@ -24,9 +24,9 @@ I know barely enough for this, don't expect good code.
 
 ### Current usage
 - Download the bash scripts, the 3rd party scripts (from original repo if possible, the ones in this act as a backup).
-- Create a folder per console, and inside it:
-  - Folder for SMB/network share (some consoles expect certain folder structure).
-  - Folder for imports (this has to be done per console for now, since it cannot identify what game is for what console).
+- Create the folders per console
+  - One should be for the original files
+  - One or more for the finished files
 - Set the paths in the scripts (import, destination, and 3rd party scripts if needed).
   - By default it deletes the .iso, easy to change in the bash script.
 - Run the bash script.  
