@@ -31,7 +31,7 @@ I know barely enough for this, don't expect good code.
   - By default it deletes the .iso, easy to change in the bash script.
 - Run the bash script.  
 
-### Recommended paths (similar to *arr apps)
+#### Recommended paths (similar to *arr apps)
 - roms
   - PS2
     - OpenPS2Loader
@@ -40,12 +40,13 @@ I know barely enough for this, don't expect good code.
     - Dolphin/rvz
     - wbfs
 - import (you could make into the downloads of *arr clients)
-  - scripts (or elsewhere)
   - PS2
   - Wii
   - ...  
+- scripts (ssd for example)
+
   
-### Self-contained paths
+#### Self-contained paths
 - roms
   - PS2
     - import
