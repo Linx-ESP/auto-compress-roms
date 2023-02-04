@@ -69,6 +69,7 @@ I know barely enough for this, don't expect good code.
 - Wii
   - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
+  - .nkit with [NKit](https://gbatemp.net/download/nkit.36157/) via [Mono](https://www.mono-project.com/)
 
 ### TO DO
 - Install required dependencies
