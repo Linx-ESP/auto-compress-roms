@@ -64,7 +64,6 @@ I know barely enough for this, don't expect good code.
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
   - pip + lz4
-  - Alternative, not implemented: [maxcso](https://github.com/unknownbrackets/maxcso)
 - Wii
   - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
@@ -74,6 +73,7 @@ I know barely enough for this, don't expect good code.
 - Install required dependencies
 - ¿Use system-wide $PATH?
 - Run at folder change / webUI
+- PS2 zso via [maxcso](https://github.com/unknownbrackets/maxcso) or similar instead of python
 
 
 ## More info
