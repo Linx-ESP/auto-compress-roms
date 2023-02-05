@@ -29,6 +29,8 @@ I know barely enough for this, don't expect good code.
 - NDS + 3DS: trimm .nds & .3ds
   - Usually you do this at the time of dumping, so don't expected.
 
+===
+
 ### Current usage
 - Download the bash scripts, the 3rd party scripts (from original repo if possible, the ones in this act as a backup).
 - Create the folders per console
