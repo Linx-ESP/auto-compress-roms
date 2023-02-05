@@ -9,16 +9,25 @@ I know barely enough for this, don't expect good code.
 - .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
-    - Might need a (.nkit extract) or want (.rvz to .iso) first
+    - You might need a (.nkit extract) or want (.rvz to .iso) first
   - Dolphin: .rvz [NOT possible in headless server]
-    - Might need a (.nkit extract) or want (.wbfs to .iso) first
-  - CEMU: .wua
+    - You might need a (.nkit extract) or want (.wbfs to .iso) first
   - PS2: .zso
     - Might need a (.bin + .cue to .iso) first
-  - Xbox 360: GoD (Games on Demand)
   - ...
 - Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
 - Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no compressed format alternative).
+
+#### Other formats.
+- Xbox 360 - GoD (Games on Demand)
+  - From extracted/folder format and .iso
+  - Compatible with OG Xbox too (playing OG Xbox games on X360 console)
+  - Will do if possible
+- CEMU: .wua   
+- Dolphin: .rvz [Not possible in headless server]
+  - NKit, maybe via Mono, doesn't seem to be less used than .rvz, not a priority
+- NDS + 3DS: trimm .nds & .3ds
+  - Usually you do this at the time of dumping, so don't expected.
 
 ### Current usage
 - Download the bash scripts, the 3rd party scripts (from original repo if possible, the ones in this act as a backup).
