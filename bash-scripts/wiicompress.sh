@@ -1,3 +1,4 @@
+#!/bin/bash
 # Doesnt convert iso to rvz. Converts to wbfs.
 # Use quotes ("")
 import_dir="/path/original/files"
