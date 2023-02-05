@@ -1,7 +1,6 @@
 # WIP/10
 
 Might end up in a docker container or something more useful, for now, bash scripts go brrr...  
-Aliases are your friends.  
 I know barely enough for this, don't expect good code.  
 
 
@@ -80,4 +79,5 @@ I know barely enough for this, don't expect good code.
 ## More info
 It could be done so it identifies the console and executes the correct script/conversion by itself using Redump and No-Intro hashes, but that's above what I can do.
 Nkit is viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
-[Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful, also Cron jobs.
+[Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.  
+You can use Cron jobs and command aliases.
