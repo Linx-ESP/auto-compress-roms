@@ -1,3 +1,4 @@
+#!/bin/bash
 # Use quotes ("")
 import_dir="/path/original/files"
 zso_py_dir="/path/for/script" # MUST include /opl-ziso.py or /ziso.py or what name it has.
