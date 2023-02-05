@@ -12,6 +12,6 @@ cd "$import_dir"; unp *.*;      # Unpack all SHOULD do only unpackable formats a
 # Nkit extract TO-DO
 # Conversion to rvz requires full Dolphin (not doable in headless server?)
 
-for f in *.iso; do wit convert --wbfs "$f" .; done;       # Keeps the .wbfs in same place, move everything at the same time later
+for f in ./*.iso; do wit convert --wbfs "$f" .; done;       # Keeps the .wbfs in same place, move everything at the same time later
 
 mv *.rvz "$rvz_dir"; mv *.wbfs "$wbfs_dir"
