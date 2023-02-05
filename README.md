@@ -62,7 +62,6 @@ I know barely enough for this, don't expect good code.
 ### Dependencies  
 - By default
   - unp (p7zip-full, unzip, etc)
-  - Can use [Unpackrr](https://github.com/Unpackerr/unpackerr) with folder watch
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
   - pip + lz4
