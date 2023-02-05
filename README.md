@@ -80,4 +80,5 @@ I know barely enough for this, don't expect good code.
 
 ## More info
 It could be done so it identifies the console and executes the correct script/conversion by itself ([RetroNAS](https://github.com/danmons/retronas/wiki/ROM-import) does something similar for importing games).    
-Nkit is viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.
+Nkit is viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
+[Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.
