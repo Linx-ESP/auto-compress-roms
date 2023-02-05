@@ -18,7 +18,7 @@ I know barely enough for this, don't expect good code.
 - Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
 - Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no compressed format alternative).
 
-#### Other formats.
+#### Other formats
 - Xbox 360 - GoD (Games on Demand)
   - From extracted/folder format and .iso
   - Compatible with OG Xbox too (playing OG Xbox games on X360 console)
