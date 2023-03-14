@@ -6,7 +6,6 @@ I know barely enough for this, don't expect good code.
 
 ## What it's meant to do  
 - Take input file
-- .zip/.7z/.rar - extract (not yet)
 - .iso - reformat/compress
   - Wii: .wbfs
     - You might need a (.nkit extract) or want (.rvz to .iso) first
