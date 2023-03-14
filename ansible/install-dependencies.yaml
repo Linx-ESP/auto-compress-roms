@@ -1,0 +1,13 @@
+---
+- name: Playbook to install Dependencies
+#   hosts: webservers
+   become: true
+   tasks: 
+    - name: Ansible apt install unp
+      apt:
+        update_cache: yes
+        name:
+          - p7zip-full
+          - unzip
+          - unp
+        state: latest
