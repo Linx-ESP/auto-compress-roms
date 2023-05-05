@@ -8,25 +8,21 @@ I know barely enough for this, don't expect good code.
 - Take input file
 - .iso - reformat/compress
   - Wii: .wbfs
-    - You might need a (.nkit extract) or want (.rvz to .iso) first
-  - Dolphin: .rvz [NOT possible in headless server]
-    - You might need a (.nkit extract) or want (.wbfs to .iso) first
   - PS2: .zso
-    - Might need a (.bin + .cue to .iso) first
+    - Might need a `.bin + .cue to .iso` first
   - ...
 - Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
 - Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no compressed format alternative).
 
-#### Other formats
-- Xbox 360 - GoD (Games on Demand)
+#### Other formats (To do)
+- Xbox 360 - `GoD` (Games on Demand)
   - From extracted/folder format and .iso
   - Compatible with OG Xbox too (playing OG Xbox games on X360 console)
-  - Will do if possible
 - CEMU: .wua   
-- Dolphin: .rvz [Not possible in headless server]
-  - NKit, maybe via Mono, doesn't seem to be less used than .rvz, not a priority
-- NDS + 3DS: trimm .nds & .3ds
-  - Usually you do this at the time of dumping, so don't expected.
+- Dolphin: `.rvz` [Not possible in headless server?]
+  - `NKit` via Mono, seems to be less used than .rvz, not a priority
+- NDS + 3DS: `trimm .nds & .3ds`
+  - Usually you do this at the time of dumping, so don't expect it.
 
  ===
 
@@ -66,9 +62,8 @@ I know barely enough for this, don't expect good code.
 
 ### TO DO
 - Install required dependencies
-- ¿Use system-wide $PATH?
-- Run at folder change / webUI
-- PS2 zso via [maxcso](https://github.com/unknownbrackets/maxcso) or similar instead of python
+- ¿Use system-wide $ENV?
+- Run at folder change / via webUI
 
 
 ## More info
