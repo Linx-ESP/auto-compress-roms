@@ -23,18 +23,18 @@ __author__ = "Virtuous Flame"
 __license__ = "GPL"
 __version__ = "2.0"
 
-import sys
 import os
+import sys
+from getopt import GetoptError, gnu_getopt
+from multiprocessing import Pool
+from struct import pack, unpack
 
 import lz4.block
-from struct import pack, unpack
-from multiprocessing import Pool
-from getopt import gnu_getopt, GetoptError
 
 ZISO_MAGIC = 0x4F53495A
 DEFAULT_ALIGN = 0
 COMPRESS_THREHOLD = 100
-DEFAULT_PADDING = br'X'
+DEFAULT_PADDING = rb"X"
 
 MP = False
 MP_NR = 1024 * 16
@@ -58,8 +58,8 @@ def lz4_decompress(compressed, block_size):
     decompressed = None
     while True:
         try:
-            decompressed = lz4.block.decompress(
-                compressed, uncompressed_size=block_size)
+            decompressed = lz4.block.decompress(compressed,
+                                                uncompressed_size=block_size)
             break
         except lz4.block.LZ4BlockError:
             compressed = compressed[:-1]
@@ -68,7 +68,9 @@ def lz4_decompress(compressed, block_size):
 
 def usage():
     print("Usage: ziso [-c level] [-m] [-t percent] [-h] infile outfile")
-    print("  -c level: 1-9 compress ISO to ZSO, use any non-zero number it has no effect")
+    print(
+        "  -c level: 1-9 compress ISO to ZSO, use any non-zero number it has no effect"
+    )
     print("              0 decompress ZSO to ISO")
     print("  -m Use multiprocessing acceleration for compressing")
     print("  -t percent Compression Threshold (1-100)")
@@ -102,17 +104,19 @@ def read_zso_header(fin):
     # ZSO header has 0x18 bytes
     data = seek_and_read(fin, 0, 0x18)
     magic, header_size, total_bytes, block_size, ver, align = unpack(
-        'IIQIbbxx', data)
+        "IIQIbbxx", data)
     return magic, header_size, total_bytes, block_size, ver, align
 
 
-def generate_zso_header(magic, header_size, total_bytes, block_size, ver, align):
-    data = pack('IIQIbbxx', magic, header_size,
-                total_bytes, block_size, ver, align)
+def generate_zso_header(magic, header_size, total_bytes, block_size, ver,
+                        align):
+    data = pack("IIQIbbxx", magic, header_size, total_bytes, block_size, ver,
+                align)
     return data
 
 
-def show_zso_info(fname_in, fname_out, total_bytes, block_size, total_block, align):
+def show_zso_info(fname_in, fname_out, total_bytes, block_size, total_block,
+                  align):
     print("Decompress '%s' to '%s'" % (fname_in, fname_out))
     print("Total File Size %ld bytes" % (total_bytes))
     print("block size      %d  bytes" % (block_size))
@@ -125,7 +129,8 @@ def decompress_zso(fname_in, fname_out):
     magic, header_size, total_bytes, block_size, ver, align = read_zso_header(
         fin)
 
-    if magic != ZISO_MAGIC or block_size == 0 or total_bytes == 0 or header_size != 24 or ver > 1:
+    if (magic != ZISO_MAGIC or block_size == 0 or total_bytes == 0
+            or header_size != 24 or ver > 1):
         print("ziso file format error")
         return -1
 
@@ -133,33 +138,36 @@ def decompress_zso(fname_in, fname_out):
     index_buf = []
 
     for _ in range(total_block + 1):
-        index_buf.append(unpack('I', fin.read(4))[0])
+        index_buf.append(unpack("I", fin.read(4))[0])
 
-    show_zso_info(fname_in, fname_out, total_bytes,
-                  block_size, total_block, align)
+    show_zso_info(fname_in, fname_out, total_bytes, block_size, total_block,
+                  align)
 
     block = 0
-    percent_period = total_block/100
+    percent_period = total_block / 100
     percent_cnt = 0
 
     while block < total_block:
         percent_cnt += 1
         if percent_cnt >= percent_period and percent_period != 0:
             percent_cnt = 0
-            print("decompress %d%%\r" %
-                  (block / percent_period), file=sys.stderr, end='\r')
+            print(
+                "decompress %d%%\r" % (block / percent_period),
+                file=sys.stderr,
+                end="\r",
+            )
 
         index = index_buf[block]
         plain = index & 0x80000000
-        index &= 0x7fffffff
+        index &= 0x7FFFFFFF
         read_pos = index << (align)
 
         if plain:
             read_size = block_size
         else:
-            index2 = index_buf[block+1] & 0x7fffffff
+            index2 = index_buf[block + 1] & 0x7FFFFFFF
             # Have to read more bytes if align was set
-            read_size = (index2-index) << (align)
+            read_size = (index2 - index) << (align)
             if block == total_block - 1:
                 read_size = total_bytes - read_pos
 
@@ -176,9 +184,8 @@ def decompress_zso(fname_in, fname_out):
                       (block, read_pos, read_size, e))
                 sys.exit(-1)
 
-        if (len(dec_data) != block_size):
-            print("%d block: 0x%08X %d" %
-                  (block, read_pos, read_size))
+        if len(dec_data) != block_size:
+            print("%d block: 0x%08X %d" % (block, read_pos, read_size))
             sys.exit(-1)
 
         fout.write(dec_data)
@@ -214,14 +221,20 @@ def compress_zso(fname_in, fname_out, level):
     total_bytes = fin.tell()
     fin.seek(0)
 
-    magic, header_size, block_size, ver, align = ZISO_MAGIC, 0x18, 0x800, 1, DEFAULT_ALIGN
+    magic, header_size, block_size, ver, align = (
+        ZISO_MAGIC,
+        0x18,
+        0x800,
+        1,
+        DEFAULT_ALIGN,
+    )
 
     # We have to use alignment on any ZSO files which > 2GB, for MSB bit of index as the plain indicator
     # If we don't then the index can be larger than 2GB, which its plain indicator was improperly set
-    align = total_bytes // 2 ** 31
+    align = total_bytes // 2**31
 
-    header = generate_zso_header(
-        magic, header_size, total_bytes, block_size, ver, align)
+    header = generate_zso_header(magic, header_size, total_bytes, block_size,
+                                 ver, align)
     fout.write(header)
 
     total_block = total_bytes // block_size
@@ -231,7 +244,7 @@ def compress_zso(fname_in, fname_out, level):
     show_comp_info(fname_in, fname_out, total_bytes, block_size, align, level)
 
     write_pos = fout.tell()
-    percent_period = total_block/100
+    percent_period = total_block / 100
     percent_cnt = 0
 
     if MP:
@@ -248,28 +261,39 @@ def compress_zso(fname_in, fname_out, level):
             percent_cnt = 0
 
             if block == 0:
-                print("compress %3d%% avarage rate %3d%%\r" % (
-                    block / percent_period, 0), file=sys.stderr, end='\r')
+                print(
+                    "compress %3d%% avarage rate %3d%%\r" %
+                    (block / percent_period, 0),
+                    file=sys.stderr,
+                    end="\r",
+                )
             else:
-                print("compress %3d%% avarage rate %3d%%\r" % (
-                    block / percent_period, 100*write_pos/(block*0x800)), file=sys.stderr, end='\r')
+                print(
+                    "compress %3d%% avarage rate %3d%%\r" %
+                    (block / percent_period, 100 * write_pos /
+                     (block * 0x800)),
+                    file=sys.stderr,
+                    end="\r",
+                )
 
         if MP:
             iso_data = [(fin.read(block_size), level)
                         for i in range(min(total_block - block, MP_NR))]
-            zso_data_all = pool.map_async(
-                lz4_compress_mp, iso_data).get(9999999)
+            zso_data_all = pool.map_async(lz4_compress_mp,
+                                          iso_data).get(9999999)
 
             for i, zso_data in enumerate(zso_data_all):
                 write_pos = set_align(fout, write_pos, align)
                 index_buf[block] = write_pos >> align
 
-                if 100 * len(zso_data) / len(iso_data[i][0]) >= min(COMPRESS_THREHOLD, 100):
+                if 100 * len(zso_data) / len(iso_data[i][0]) >= min(
+                        COMPRESS_THREHOLD, 100):
                     zso_data = iso_data[i][0]
                     index_buf[block] |= 0x80000000  # Mark as plain
                 elif index_buf[block] & 0x80000000:
                     print(
-                        "Align error, you have to increase align by 1 or OPL won't be able to read offset above 2 ** 31 bytes")
+                        "Align error, you have to increase align by 1 or OPL won't be able to read offset above 2 ** 31 bytes"
+                    )
                     sys.exit(1)
 
                 fout.write(zso_data)
@@ -292,7 +316,8 @@ def compress_zso(fname_in, fname_out, level):
                 index_buf[block] |= 0x80000000  # Mark as plain
             elif index_buf[block] & 0x80000000:
                 print(
-                    "Align error, you have to increase align by 1 or CFW won't be able to read offset above 2 ** 31 bytes")
+                    "Align error, you have to increase align by 1 or CFW won't be able to read offset above 2 ** 31 bytes"
+                )
                 sys.exit(1)
 
             fout.write(zso_data)
@@ -305,11 +330,11 @@ def compress_zso(fname_in, fname_out, level):
     # Update index block
     fout.seek(len(header))
     for i in index_buf:
-        idx = pack('I', i)
+        idx = pack("I", i)
         fout.write(idx)
 
     print("ziso compress completed , total size = %8d bytes , rate %d%%" %
-          (write_pos, (write_pos*100/total_bytes)))
+          (write_pos, (write_pos * 100 / total_bytes)))
 
     fin.close()
     fout.close()
@@ -332,17 +357,17 @@ def parse_args():
     level = None
 
     for o, a in optlist:
-        if o == '-c':
+        if o == "-c":
             level = int(a)
-        elif o == '-m':
+        elif o == "-m":
             MP = True
-        elif o == '-t':
+        elif o == "-t":
             COMPRESS_THREHOLD = min(int(a), 100)
-        elif o == '-a':
+        elif o == "-a":
             DEFAULT_ALIGN = int(a)
-        elif o == '-p':
-            DEFAULT_PADDING = bytes(a[0], encoding='utf8')
-        elif o == '-h':
+        elif o == "-p":
+            DEFAULT_PADDING = bytes(a[0], encoding="utf8")
+        elif o == "-h":
             usage()
             sys.exit(0)
 
@@ -404,6 +429,7 @@ PROFILE = False
 if __name__ == "__main__":
     if PROFILE:
         import cProfile
+
         cProfile.run("main()")
     else:
         main()
