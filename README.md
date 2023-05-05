@@ -51,22 +51,7 @@ I know barely enough for this, don't expect good code.
   - PS2
   - Wii
   - ...  
-- scripts (ssd for example)
-
-  
-#### Self-contained paths
-- roms
-  - PS2
-    - import
-    - OpenPS2Loader
-      - DVD
-  - Wii
-    - import
-    - wbfs
-    - rvz
-  - scripts
-    - bash scripts (the originals from this repo)
-    - compression scripts (the 3rd party ones)  
+- scripts (can be in an SSD or your general OS storage, as in, it needs little space)
   
 ### Dependencies  
 - By default
