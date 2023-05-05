@@ -1,13 +1,19 @@
----
-- name: Playbook to install Dependencies
-#   hosts: webservers
-   become: true
-   tasks: 
-    - name: Ansible apt install unp
+# Bing ChatGPT wrote this, will check if it works... some day.
+- name: Install python3, python3-pip, lz4 pip module, p7zip-full, unzip and unp
+  hosts: localhost # same way as retronas
+  tasks:
+    - name: Install python3, python3-pip, p7zip-full, unzip and unp
       apt:
-        update_cache: yes
         name:
+          - python3
+          - python3-pip
           - p7zip-full
           - unzip
           - unp
-        state: latest
+        state: present
+      become: yes # sudo / elevation
+
+    - name: Install lz4 pip module
+      pip:
+        name: lz4
+        executable: pip3
