@@ -59,17 +59,17 @@ Mirrored for imported games, before compressing
                  ../Wii/wbfs  
                  ../Wii/rvz (for dolphin)
 ```
-### Dependencies  
+### Dependencies (auto-installed)
 - By default
-  - ``unp`` (p7zip-full, unzip, etc)
+  - ``unp`` (``p7zip-full``, ``unzip``, etc)
+  - ``ansible``
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
-  - pip + lz4
-- Wii)
+  - ``pip3`` + lz4
+- Wii  
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
 
 ### TO DO
-- Install required dependencies
 - ¿Use system-wide $ENV?
 - Run at folder change / via webUI
 
