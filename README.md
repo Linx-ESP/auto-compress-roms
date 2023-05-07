@@ -36,6 +36,7 @@ I know barely enough for this, don't expect good code.
 - Run the bash script.  
 
 #### Recommended paths
+```
 /media/games (example) 
     ../games/roms  
           ../roms/PS2  
@@ -57,7 +58,7 @@ Mirrored for imported games, before compressing
           ../import/Wii  
                  ../Wii/wbfs  
                  ../Wii/rvz (for dolphin)
-  
+```
 ### Dependencies  
 - By default
   - unp (p7zip-full, unzip, etc)
