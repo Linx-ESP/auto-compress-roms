@@ -1,4 +1,4 @@
-# Bing ChatGPT wrote this, will check if it works... some day.
+# Bing ChatGPT wrote this, seems to work.
 - name: Install python3, python3-pip, lz4 pip module, p7zip-full, unzip and unp
   hosts: localhost # same way as retronas
   tasks:
@@ -17,3 +17,19 @@
       pip:
         name: lz4
         executable: pip3
+    - name: Download WIT (Wiimms ISO Tools) tarball
+      get_url:
+        url: https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz
+        dest: /tmp/wit-v3.05a-r8638-x86_64.tar.gz
+
+    - name: Extract WIT tarball
+      unarchive:
+        src: /tmp/wit-v3.05a-r8638-x86_64.tar.gz
+        dest: /tmp
+        remote_src: yes
+
+    - name: Execute install.sh for WIT
+      command: 'bash ./install.sh'
+      args:
+        chdir: /tmp/wit-v3.05a-r8638-x86_64   # Necesario al parecer
+      become: yes
