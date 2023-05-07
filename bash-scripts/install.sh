@@ -11,3 +11,8 @@ curl -L -o playbook.yml https://github.com/Linx-ESP/auto-compress-roms/blob/ansi
 
 # Run Ansible playbook
 ansible-playbook playbook.yml
+
+# Download and install WIT (Wiimm's ISO Tools)
+wget https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz
+unp wit-v3.05a-r8638-x86_64.tar.gz
+sudo bash ./wit-v3.05a-r8638-x86_64/install.sh 
