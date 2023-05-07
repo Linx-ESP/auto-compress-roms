@@ -35,19 +35,28 @@ I know barely enough for this, don't expect good code.
   - By default it deletes the .iso, easy to change in the bash script.
 - Run the bash script.  
 
-#### Recommended paths (similar to *arr apps)
-- roms
-  - PS2
-    - OpenPS2Loader
-      - DVD
-  - Wii
-    - Dolphin/rvz
-    - wbfs
-- import (you could make into the downloads of *arr clients)
-  - PS2
-  - Wii
-  - ...  
-- scripts (can be in an SSD or your general OS storage, as in, it needs little space)
+#### Recommended paths
+/media/games (example) 
+    ../games/roms  
+          ../roms/PS2  
+               ../PS2/OpenPS2Loader (For OPL SMB Share)  
+                              ../DVD  
+                              ../CD  
+    ../games/roms  
+          ../roms/Wii  
+               ../Wii/wbfs  
+               ../Wii/rvz (for dolphin)
+               
+Mirrored for imported games, before compressing
+    ../games/import  
+          ../import/PS2  
+                 ../PS2/OpenPS2Loader (For OPL SMB Share)  
+                              ../DVD  
+                              ../CD  
+    ../games/import  
+          ../import/Wii  
+                 ../Wii/wbfs  
+                 ../Wii/rvz (for dolphin)
   
 ### Dependencies  
 - By default
