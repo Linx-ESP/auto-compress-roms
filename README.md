@@ -12,7 +12,7 @@ I know barely enough for this, don't expect good code.
     - Might need a `.bin + .cue to .iso` first
   - ...
 - Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
-- Delete .iso (easy to change in the bash script, might add exceptions in some consoles if there is no compressed format alternative).
+- Deletes original .iso (you can manually edit the script not to delete)
 
 #### Other formats (To do)
 - Xbox 360 - `GoD` (Games on Demand)
@@ -27,15 +27,13 @@ I know barely enough for this, don't expect good code.
  ===
 
 ### Current usage
-- Download the bash scripts, the 3rd party scripts (from original repo if possible, the ones in this act as a backup).
-- Create the folders per console
-  - One should be for the original files
-  - One or more for the finished files
-- Set the paths in the scripts (import, destination, and 3rd party scripts if needed).
-  - By default it deletes the .iso, easy to change in the bash script.
-- Run the bash script.  
+#### APT based distros (Ubuntu, Debian...)
+Run ``curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/install.sh | sudo bash``
 
-#### Recommended paths
+Edit the paths on the script files:
+    ``/media/games/scripts/...``
+
+### Recommended paths
 ```
 /media/games (example) 
     ../games/roms  

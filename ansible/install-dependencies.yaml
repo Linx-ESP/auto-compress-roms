@@ -11,12 +11,13 @@
           - unzip
           - unp
         state: present
-      become: yes # sudo / elevation
+      become: true # sudo / elevation
 
     - name: Install lz4 pip module
       pip:
         name: lz4
         executable: pip3
+# ---------------------------------------------------------
     - name: Download WIT (Wiimms ISO Tools) tarball
       get_url:
         url: https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz
@@ -28,8 +29,17 @@
         dest: /tmp
         remote_src: yes
 
-    - name: Execute install.sh for WIT
+    - name: Install WIT - Migth be slower than the previous steps, it's OK
       command: 'bash ./install.sh'
       args:
         chdir: /tmp/wit-v3.05a-r8638-x86_64   # Necesario al parecer
-      become: yes
+      become: true
+# ---------------------------------------------------------
+    - name: Download Wii Script
+      get_url:
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/wii-iso2wbfs.sh
+        dest: /media/games/scripts/wii-iso2wbfs.sh
+    - name: Download PS2/OPL Script
+      get_url:
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/ps2-opl-iso2zso.sh
+        dest: /media/games/scripts/ps2-opl-iso2zso.sh
