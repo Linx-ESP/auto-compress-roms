@@ -61,14 +61,12 @@ Mirrored for imported games, before compressing
 ```
 ### Dependencies  
 - By default
-  - unp (p7zip-full, unzip, etc)
+  - ``unp`` (p7zip-full, unzip, etc)
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
   - pip + lz4
-- Wii
-  - .rvz requieres Dolphin-emu. [How to](https://github.com/dolphin-emu/dolphin/pull/10252)
+- Wii)
   - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
-  - ~~.nkit with [NKit](https://gbatemp.net/download/nkit.36157/) via [Mono](https://www.mono-project.com/)~~
 
 ### TO DO
 - Install required dependencies
