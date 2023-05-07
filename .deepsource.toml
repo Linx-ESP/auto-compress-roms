@@ -20,3 +20,6 @@ name = "isort"
 
 [[transformers]]
 name = "yapf"
+
+[[transformers]]
+name = "autopep8"
