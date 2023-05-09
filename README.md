@@ -1,7 +1,11 @@
 # WIP, but usable
 
- 
-I know barely enough for this, don't expect good code.  
+## Save space on your games ROMs
+Most emulators or consoles allow to use different formats for games so you don't have to storage a full 8GB from a DVD since most of it will be blank.  
+
+This scripts allow 
+
+##### I will try to properly comment the code with sources and reasoning for those who want to work or fork it.
 
 
 ## What it's meant to do  
@@ -20,12 +24,12 @@ I know barely enough for this, don't expect good code.
   - From extracted/folder format and .iso
   - Compatible with OG Xbox too (playing OG Xbox games on X360 console)
 - CEMU: .wua   
-- Dolphin: `.rvz` [Not possible in headless server?]
+- Dolphin: `.rvz` [¿Not possible in headless server?]
   - `NKit` via Mono, seems to be less used than .rvz, not a priority
 - NDS + 3DS: `trimm .nds & .3ds`
-  - Usually you do this at the time of dumping, so don't expect it.
+  - Usually you do this at the time of dumping, might not do it.
 
- ===
+---
 
 ### How to use
 #### APT based distros (Ubuntu, Debian...)
@@ -75,6 +79,8 @@ Mirrored for imported games, before compressing
 You can point certains folder to a removable drive, such as a usb hard drive for the Wii.
   - Edit /etc/fstab so it mounts the drive with the same path if needed.
 
+---
+
 ### Dependencies (auto-installed)
 - By default
   - ``unp`` (``p7zip-full``, ``unzip``, etc)
@@ -87,7 +93,15 @@ You can point certains folder to a removable drive, such as a usb hard drive for
 
 ### TO DO
 - ¿Use system-wide $ENV for game paths + interactive via dialog or similar?
-- Run at folder change / via webUI
+- Create single command. E.g
+```
+compressroms wii (compress wii iso to wbfs)
+compressroms ps2 (compress iso ps2)
+compressroms editpaths (dialog or similar for interactive path selection and no more file editing)
+compressroms editpaths wii-output (use pwd/actual path as wii output)
+```
+- Run at folder change
+- Integrate 
 
 
 ## More info
