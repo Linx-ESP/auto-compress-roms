@@ -43,7 +43,7 @@
 
     - name: Download main script
       get_url:
-        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/compressroms
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/compresroms.sh
         dest: /usr/local/bin/compressroms # ../bin for system wide access. /usr/bin because it isn't a system must-have at boot. /local/ as it is not installed by a package manager.
 
     - name: Download Wii script
