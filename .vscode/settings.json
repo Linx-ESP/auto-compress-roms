@@ -1,6 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml",
-        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///c%3A/Dise%C3%B1os/Proyectos/Github/autocompress%20roms/auto-compress-roms/ansible/install-dependencies.yaml"
-    }
-}
