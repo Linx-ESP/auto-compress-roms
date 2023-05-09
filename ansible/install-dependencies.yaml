@@ -40,19 +40,19 @@
         path: /media/games/scripts
         state: directory
         recurse: yes
-    - name: Download Wii Script
+    - name: Download Wii script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/wii-iso2wbfs.sh
         dest: /media/games/scripts/wii-iso2wbfs.sh
-    - name: Download GameCube Script
+    - name: Download GameCube script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/gc-iso2ciso.sh
         dest: /media/games/scripts/gc-iso2ciso.sh
-    - name: Download PS2/OPL Script
+    - name: Download PS2/OPL script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/ps2-opl-iso2zso.sh
         dest: /media/games/scripts/ps2-opl-iso2zso.sh
-    - name: Download PS2/OPL Script
+    - name: Download OPL zso script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/3rd%20party%20scripts/opl-ziso.py
         dest: /media/games/scripts/opl-ziso.py
