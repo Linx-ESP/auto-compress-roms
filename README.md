@@ -37,6 +37,11 @@ Edit the the input and output on the script files:
 Run the scripts  
     ``bash /media/games/scripts/(choose script).sh``
 
+### Notes
+
+- `Failed to detect file type of`
+  - This is not a problem. Unp (unpack) will output this for each file that is not a .zip/.tar/.rar/...
+
 ### Recommended paths
 ```
 /media/games (example) 
@@ -73,7 +78,7 @@ Mirrored for imported games, before compressing
   - [Wimm's ISO Tools](https://wit.wiimm.de/)
 
 ### TO DO
-- ¿Use system-wide $ENV?
+- ¿Use system-wide $ENV for game paths + interactive via dialog or similar?
 - Run at folder change / via webUI
 
 
