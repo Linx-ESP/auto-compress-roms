@@ -92,7 +92,7 @@ You can point certains folder to a removable drive, such as a usb hard drive for
   - [Wimm's ISO Tools](https://wit.wiimm.de/)
 
 ### TO DO
-- ¿Use system-wide $ENV for game paths + interactive via dialog or similar?
+- ¿Use system-wide ``$ENV`` for game paths + interactive via dialog or similar?
 - Create single command. E.g
 ```
 compressroms wii (compress wii iso to wbfs)
