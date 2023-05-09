@@ -34,7 +34,8 @@
       args:
         chdir: /tmp/wit-v3.05a-r8638-x86_64 # Necesario al parecer
       become: true
-    # ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
+
+    # --------------- SCRIPTS ----------------------
     - name: Create folder to storage scripts
       file:
         path: /media/games/scripts
@@ -52,6 +53,8 @@
       file:
         path: /usr/local/bin/compressroms
         mode: "+x"
+
+    # ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
 
     - name: Download Wii script
       get_url:

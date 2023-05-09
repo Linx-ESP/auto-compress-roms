@@ -39,11 +39,14 @@ This scripts allow
 
 Run `curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/install.sh | sudo bash`
 
-Edit the the input and output on the script files:
+Edit the the input and output on the script files:  
 `/media/games/scripts/...`
 
-Run the scripts  
- `bash /media/games/scripts/(choose script).sh`
+Run the program (might need relogin)  
+`compressroms`  
+`compressroms gamecube`  
+`compressroms wii`  
+`compressroms ps2`
 
 - Cron jobs can help automate this. Careful in keeping the original files, better to delete them.
 
