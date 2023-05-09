@@ -17,7 +17,7 @@
       pip:
         name: lz4
         executable: pip3
-# ---------------------------------------------------------
+    # ---------------------------------------------------------
     - name: Download WIT (Wiimms ISO Tools) tarball
       get_url:
         url: https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz
@@ -30,16 +30,22 @@
         remote_src: yes
 
     - name: Install WIT - Migth be slower than the previous steps, it's OK
-      command: 'bash ./install.sh'
+      command: "bash ./install.sh"
       args:
-        chdir: /tmp/wit-v3.05a-r8638-x86_64   # Necesario al parecer
+        chdir: /tmp/wit-v3.05a-r8638-x86_64 # Necesario al parecer
       become: true
-# ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
+    # ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
     - name: Create folder to storage scripts
       file:
         path: /media/games/scripts
         state: directory
         recurse: yes
+
+    - name: Download main script
+      get_url:
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/compressroms
+        dest: /usr/local/bin/compressroms # ../bin for system wide access. /usr/bin because it isn't a system must-have at boot. /local/ as it is not installed by a package manager.
+
     - name: Download Wii script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/wii-iso2wbfs.sh
