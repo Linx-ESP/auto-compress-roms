@@ -35,6 +35,11 @@
         chdir: /tmp/wit-v3.05a-r8638-x86_64   # Necesario al parecer
       become: true
 # ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
+    - name: Create folder to storage scripts
+      file:
+        path: /media/games/scripts
+        state: directory
+        recurse: yes
     - name: Download Wii Script
       get_url:
         url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/wii-iso2wbfs.sh
