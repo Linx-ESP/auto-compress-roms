@@ -41,6 +41,9 @@ Run the scripts
 
 - `Failed to detect file type of`
   - This is not a problem. Unp (unpack) will output this for each file that is not a .zip/.tar/.rar/...
+- Multidisc games
+  - If the original program used outputs them with the same name, it will overwrite itself.
+    - GameCube 2-Disc games (e.g. Tales of Symphonia) won't work. It won't convert the second file.
 
 ### Recommended paths
 ```
@@ -67,6 +70,10 @@ Mirrored for imported games, before compressing
                  ../Wii/rvz (for dolphin)
     ...etc...
 ```
+
+You can point certains folder to a removable drive, such as a usb hard drive for the Wii.
+  - Edit /etc/fstab so it mounts the drive with the same path if needed.
+
 ### Dependencies (auto-installed)
 - By default
   - ``unp`` (``p7zip-full``, ``unzip``, etc)
