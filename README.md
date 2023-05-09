@@ -7,12 +7,13 @@ I know barely enough for this, don't expect good code.
 ## What it's meant to do  
 - Take input file
 - .iso - reformat/compress
+  - GameCube: .ciso
   - Wii: .wbfs
   - PS2: .zso
     - Might need a `.bin + .cue to .iso` first
   - ...
-- Take compressed rom and move it to the correct folder (meant for games over SMB and similar). 
-- Deletes original .iso (you can manually edit the script not to delete)
+- Take compressed rom and move it to the correct folder (meant for games over SMB or loaders that require certain folder structure). 
+- Keeps original .iso (you can manually edit the script to delete)
 
 #### Other formats (To do)
 - Xbox 360 - `GoD` (Games on Demand)
@@ -26,12 +27,15 @@ I know barely enough for this, don't expect good code.
 
  ===
 
-### Current usage
+### How to use
 #### APT based distros (Ubuntu, Debian...)
 Run ``curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/install.sh | sudo bash``
 
-Edit the paths on the script files:
+Edit the the input and output on the script files:
     ``/media/games/scripts/...``
+
+Run the scripts  
+    ``bash /media/games/scripts/(choose script).sh``
 
 ### Recommended paths
 ```
@@ -40,11 +44,12 @@ Edit the paths on the script files:
           ../roms/PS2  
                ../PS2/OpenPS2Loader (For OPL SMB Share)  
                               ../DVD  
-                              ../CD  
-    ../games/roms  
+                              ../CD   
           ../roms/Wii  
                ../Wii/wbfs  
                ../Wii/rvz (for dolphin)
+          ../roms/GameCube
+               ../GameCube/ciso/..
                
 Mirrored for imported games, before compressing
     ../games/import  
@@ -52,10 +57,10 @@ Mirrored for imported games, before compressing
                  ../PS2/OpenPS2Loader (For OPL SMB Share)  
                               ../DVD  
                               ../CD  
-    ../games/import  
           ../import/Wii  
                  ../Wii/wbfs  
                  ../Wii/rvz (for dolphin)
+    ...etc...
 ```
 ### Dependencies (auto-installed)
 - By default
@@ -64,8 +69,8 @@ Mirrored for imported games, before compressing
 - PS2
   - [This python script from OPL](https://github.com/ps2homebrew/Open-PS2-Loader/blob/master/pc/ziso.py)
   - ``pip3`` + lz4
-- Wii  
-  - .wbfs with [Wimm's ISO Tools](https://wit.wiimm.de/)
+- Wii/GameCube  
+  - [Wimm's ISO Tools](https://wit.wiimm.de/)
 
 ### TO DO
 - ¿Use system-wide $ENV?
@@ -74,6 +79,6 @@ Mirrored for imported games, before compressing
 
 ## More info
 It could be done so it identifies the console and executes the correct script/conversion by itself using Redump and No-Intro hashes, but that's above what I can do.  
-Nkit is viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
+Nkit seems viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
 [Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.  
 You can use Cron jobs and command aliases.
