@@ -1,6 +1,6 @@
-# WIP/10
+# WIP, but usable
 
-Might end up in a docker container or something more useful, for now, bash scripts go brrr...  
+ 
 I know barely enough for this, don't expect good code.  
 
 
@@ -35,7 +35,8 @@ Edit the the input and output on the script files:
     ``/media/games/scripts/...``
 
 Run the scripts  
-    ``bash /media/games/scripts/(choose script).sh``
+    ``bash /media/games/scripts/(choose script).sh``  
+  - Cron jobs can help automate this. Careful in keeping the original files, better to delete them.
 
 ### Notes
 
@@ -90,7 +91,9 @@ You can point certains folder to a removable drive, such as a usb hard drive for
 
 
 ## More info
-It could be done so it identifies the console and executes the correct script/conversion by itself using Redump and No-Intro hashes, but that's above what I can do.  
-Nkit seems viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
-[Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.  
-You can use Cron jobs and command aliases.
+- It could be done so it identifies the console and executes the correct script/conversion by itself using Redump and No-Intro hashes, requiring only one input folder. But that's above what I can do.  
+- Nkit seems viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.  
+- .rvz requires Dolphin. Haven't be able to install it in a headless server, will check again sometime.
+- [Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.  
+  - [RetroNAS](https://github.com/danmons/retronas) caused me issues as I use my NAS for more, but useful for a dedicated server.
+- Might end up in a docker container or something more useful. For now, ansible + bash scripts go brrr... 
