@@ -47,6 +47,7 @@
         dest: /usr/local/bin/compressroms
       become: true
       # ../bin for system wide access. /usr/bin because it isn't a system must-have at boot. /local/ as it is not installed by a package manager.
+
     - name: Make main script executable
       file:
         path: /usr/local/bin/compressroms
