@@ -39,10 +39,12 @@ This scripts allow
 
 Run `curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/install.sh | sudo bash`
 
+- This uses SUDO
+
 Edit the the input and output on the script files:  
 `/media/games/scripts/...`
 
-Run the program (might need relogin)  
+Run the command (might need relogin)  
 `compressroms`  
 `compressroms gamecube`  
 `compressroms wii`  
