@@ -1,8 +1,8 @@
-[Global settings]
+# Global settings
 
 zso_py_dir="/media/games/scripts/opl-ziso.py"
 
-# [Input Paths]
+# Input Paths
 roms_import=
 
 gamecube_input="${roms_import}/gc"
@@ -10,7 +10,7 @@ wii_input="${roms_import}/wii"
 
 ps2_input="${roms_import}/ps2"
 
-# [Output Paths]
+# Output Paths
 roms_output=
 
 gamecube_output="${roms_output}/Nintendo GameCube"
