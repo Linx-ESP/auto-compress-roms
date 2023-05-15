@@ -39,7 +39,7 @@ This scripts allow
 
 Run `curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/install.sh | sudo bash`
 
-- This uses SUDO
+- Requires SUDO
 
 Edit the the input and output on the script files:  
 `/media/games/scripts/...`
@@ -57,8 +57,7 @@ Run the command (might need relogin)
 - `Failed to detect file type of`
   - This is not a problem. Unp (unpack) will output this for each file that is not a .zip/.tar/.rar/...
 - Multidisc games
-  - If the original program used outputs them with the same name, it will overwrite itself.
-    - GameCube 2-Disc games (e.g. Tales of Symphonia) won't work. It won't convert the second file.
+  - Testing
 
 ### Recommended paths
 
@@ -107,17 +106,18 @@ You can point certains folder to a removable drive, such as a usb hard drive for
 ### TO DO
 
 - ¿Use system-wide `$ENV` for game paths + interactive via dialog or similar?
+  - All paths one file, kind of a local ENV file?
 - Create single command. E.g
 
 ```
-compressroms wii (compress wii iso to wbfs)
-compressroms ps2 (compress iso ps2)
+compressroms wii (compress wii iso to wbfs) - DONE
+compressroms ps2 (compress iso ps2) - DONE
 compressroms editpaths (dialog or similar for interactive path selection and no more file editing)
 compressroms editpaths wii-output (use pwd/actual path as wii output)
 ```
 
 - Run at folder change
-- Integrate
+- Integrate with cockpit
 
 ## More info
 
@@ -125,5 +125,5 @@ compressroms editpaths wii-output (use pwd/actual path as wii output)
 - Nkit seems viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.
 - .rvz requires Dolphin. Haven't be able to install it in a headless server, will check again sometime.
 - [Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.
-  - [RetroNAS](https://github.com/danmons/retronas) caused me issues as I use my NAS for more, but useful for a dedicated server.
-- Might end up in a docker container or something more useful. For now, ansible + bash scripts go brrr...
+  - [RetroNAS](https://github.com/danmons/retronas) caused me issues as I use my NAS for more than that, but useful for a dedicated server.
+- Might end up in a docker container, probably if I add Dolphin support. For now, ansible + bash scripts go brrr...
