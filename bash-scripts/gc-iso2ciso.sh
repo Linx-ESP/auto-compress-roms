@@ -14,12 +14,14 @@ for f in *.iso; do
 ID6=$(wit ID6 "$f")
 ID8=$(wit ID8 "$f")
 result=${ID8#"$ID6"}
-discid=${result:0:3}
+resultnospace=${result:1}
+discid=${resultnospace:0:2}
+echo ${discid}
 
 
-  if [ "$discid" == "00" ]; then                       # For Disc 1 - ID'd as 00
+  if [ "echo ${discid}" == "00" ]; then                       # For Disc 1 - ID'd as 00
       wit copy --ciso "$f" "$ciso_dir/%I/game.ciso"       # change copy to convert for deleting the original file
-  elif [ "$discid" == "01" ]; then                       # For Disc 2 - ID'd as 00
+  elif [ "echo ${discid}" == "01" ]; then                       # For Disc 2 - ID'd as 00
       wit copy --ciso "$f" "$ciso_dir/%I/disc2.ciso"      # change copy to convert for deleting the original file
   else
       echo "No disc number found"
