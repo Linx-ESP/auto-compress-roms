@@ -1,0 +1,15 @@
+[Global settings]
+
+[Input-Paths]
+
+gamecube-input="/path/to/import/gc/roms"
+wii-input="/path/to/import/wii/roms"
+
+ps2-input="/path/to/import/ps2/roms"
+
+[Output-Paths]
+
+gamecube-ciso-output="/where/to/storage/gc/roms"
+wii-wbfs-output="/where/to/storage/gc/roms"
+
+ps2-zso-output="/where/to/storage/gc/roms"
