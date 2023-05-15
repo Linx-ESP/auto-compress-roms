@@ -41,8 +41,8 @@ Run `curl -sSL https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/mai
 
 - Requires SUDO
 
-Edit the the input and output on the script files:  
-`/media/games/scripts/...`
+Set paths, run command:
+`compressroms-setup`
 
 Run the command (might need relogin)  
 `compressroms`  
@@ -54,38 +54,25 @@ Run the command (might need relogin)
 
 ### Notes
 
-- `fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}`
-  - Do any other sudo command so it asks you for the password (sudo apt update for example). Will look how to fix it.
 - `Failed to detect file type of`
   - This is not a problem. Unp (unpack) will output this for each file that is not a .zip/.tar/.rar/...
 - Multidisc games
   - Testing
 
-### Recommended paths
+### Automatic paths
 
 ```
-/media/games (example)
-    ../games/roms
-          ../roms/PS2
-               ../PS2/OpenPS2Loader (For OPL SMB Share)
-                              ../DVD
-                              ../CD
-          ../roms/Wii
-               ../Wii/wbfs
-               ../Wii/rvz (for dolphin)
-          ../roms/GameCube
-               ../GameCube/ciso/..
+Import path (set using compressroms-setup)
+    ../gc
+    ../wii
+    ../ps2
 
-Mirrored for imported games, before compressing
-    ../games/import
-          ../import/PS2
-                 ../PS2/OpenPS2Loader (For OPL SMB Share)
-                              ../DVD
-                              ../CD
-          ../import/Wii
-                 ../Wii/wbfs
-                 ../Wii/rvz (for dolphin)
-    ...etc...
+Output path (set using compressroms-setup)
+    ../PS2/OpenPS2Loader (For OPL SMB Share)
+        ../DVD
+        ../CD
+    ../Wii
+    ../GameCube
 ```
 
 You can point certains folder to a removable drive, such as a usb hard drive for the Wii.
