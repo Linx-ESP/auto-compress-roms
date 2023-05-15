@@ -17,5 +17,8 @@ elif [[ "$1" == "ps2" ]]; then
 
 # ======================== Error ========================
 else
-    echo "Invalid argument."
+    echo "Invalid argument. Valid arguments are:
+    gamecube
+    wii
+    ps2"
 fi

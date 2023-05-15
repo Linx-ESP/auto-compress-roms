@@ -107,17 +107,8 @@ You can point certains folder to a removable drive, such as a usb hard drive for
 
 ### TO DO
 
-- ¿Use system-wide `$ENV` for game paths + interactive via dialog or similar?
-  - All paths one file, kind of a local ENV file?
-- Create single command. E.g
-
-```
-compressroms wii (compress wii iso to wbfs) - DONE
-compressroms ps2 (compress iso ps2) - DONE
-compressroms editpaths (dialog or similar for interactive path selection and no more file editing)
-compressroms editpaths wii-output (use pwd/actual path as wii output)
-```
-
+- Setup individiual path in a more interactive way
+- First time setup for folder structure
 - Run at folder change
 - Integrate with cockpit
 
@@ -129,3 +120,7 @@ compressroms editpaths wii-output (use pwd/actual path as wii output)
 - [Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.
   - [RetroNAS](https://github.com/danmons/retronas) caused me issues as I use my NAS for more than that, but useful for a dedicated server.
 - Might end up in a docker container, probably if I add Dolphin support. For now, ansible + bash scripts go brrr...
+
+```
+
+```

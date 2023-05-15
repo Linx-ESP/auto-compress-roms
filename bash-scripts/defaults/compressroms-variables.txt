@@ -1,6 +1,9 @@
 [Global settings]
 
+zso_py_dir="/media/games/scripts/opl-ziso.py"
+
 [Input-Paths]
+roms-import=
 
 gamecube-input="/path/to/import/gc/roms"
 wii-input="/path/to/import/wii/roms"
@@ -8,8 +11,9 @@ wii-input="/path/to/import/wii/roms"
 ps2-input="/path/to/import/ps2/roms"
 
 [Output-Paths]
+roms-output=
 
-gamecube-ciso-output="/where/to/storage/gc/roms"
-wii-wbfs-output="/where/to/storage/gc/roms"
+gamecube-output="/where/to/storage/gc/roms"
+wii-output="/where/to/storage/gc/roms"
 
-ps2-zso-output="/where/to/storage/gc/roms"
+ps2-output="/where/to/storage/gc/roms"

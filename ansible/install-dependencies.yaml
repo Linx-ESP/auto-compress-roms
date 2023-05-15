@@ -17,7 +17,7 @@
       pip:
         name: lz4
         executable: pip3
-    # ---------------------------------------------------------
+    # ------------------ WIT ------------------------------------
     - name: Download WIT (Wiimms ISO Tools) tarball
       get_url:
         url: https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz
@@ -35,7 +35,7 @@
         chdir: /tmp/wit-v3.05a-r8638-x86_64 # Necesario al parecer
       become: true
 
-    # --------------- SCRIPTS ----------------------
+    # --------------- MAIN SCRIPTS ----------------------
     - name: Create folder to storage scripts
       file:
         path: /media/games/scripts
