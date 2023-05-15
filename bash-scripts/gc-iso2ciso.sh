@@ -11,8 +11,8 @@ unp ./*.*      # Unpack all SHOULD do is ONLY unpackable formats and the errors 
 
 
 for f in *.iso; do
-ID6=$(wit ID6 /mnt/sleepwalking/public/descargas/games/gamecube/tos2.iso)
-ID8=$(wit ID8 /mnt/sleepwalking/public/descargas/games/gamecube/tos2.iso)
+ID6=$(wit ID6 "$f")
+ID8=$(wit ID8 "$f")
 result=${ID8#"$ID6"}
 discid=${result:0:3}
 

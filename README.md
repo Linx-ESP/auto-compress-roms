@@ -54,6 +54,8 @@ Run the command (might need relogin)
 
 ### Notes
 
+- `fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}`
+  - Do any other sudo command so it asks you for the password (sudo apt update for example). Will look how to fix it.
 - `Failed to detect file type of`
   - This is not a problem. Unp (unpack) will output this for each file that is not a .zip/.tar/.rar/...
 - Multidisc games
