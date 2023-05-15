@@ -30,12 +30,12 @@ fi
 
 # Define an array of valid options for the first argument
 valid_options=(
-        "gamecube-input"
-        "wii-input"
-        "ps2-input"
-        "gamecube-output"
-        "wii-output"
-        "ps2-output"
+        "gamecube_input"
+        "wii_input"
+        "ps2_input"
+        "gamecube_output"
+        "wii_output"
+        "ps2_output"
 )
 
 # Check if the first argument is in the array of valid options

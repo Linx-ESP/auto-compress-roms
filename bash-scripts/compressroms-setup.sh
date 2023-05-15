@@ -6,8 +6,8 @@ read -p "Set path to ROMs to compress: " romsinputvar
 read -p "Set path to storage compressed ROMs: " romsoutputvar
 echo
 
-sed -i "s@roms-import=.*@roms-import="$romsinputvar"@" "$FILE"
-sed -i "s@roms-output=.*@roms-output="$romsoutputvar"@" "$FILE"
+sed -i "s@roms_import=.*@roms_import="$romsinputvar"@" "$FILE"
+sed -i "s@roms_output=.*@roms_output="$romsoutputvar"@" "$FILE"
 
 echo Will look for ROMs at "$romsinputvar" subfolders and put the compressed ROMs at "$romsoutputvar"
 
