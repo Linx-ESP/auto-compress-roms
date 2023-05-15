@@ -48,11 +48,25 @@
         dest: /usr/local/bin/compressroms
       become: true
       # ../bin for system wide access. /usr/bin because it isn't a system must-have at boot. /local/ as it is not installed by a package manager.
-
     - name: Make main script executable
       file:
         path: /usr/local/bin/compressroms
         mode: "+x"
+
+    - name: Download configuration script
+      get_url:
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/compressroms-config.sh
+        dest: /usr/local/bin/compressroms-config
+      become: true
+    - name: Make configuration script executable
+      file:
+        path: /usr/local/bin/compressroms-config
+        mode: "+x"
+
+    - name: Download default config
+      get_url:
+        url: https://raw.githubusercontent.com/Linx-ESP/auto-compress-roms/main/bash-scripts/defaults/compressroms-variables.txt
+        dest: /media/games/scripts/compressroms-variables.txt
 
     # ----------[I SHOULD DOWNLOAD THE DIRECTORY, YES. BUT THIS WAY THE SCRIPTS FEEL MORE SPECIAL AND WORK MORE BETTER-ER]-----------------
 
