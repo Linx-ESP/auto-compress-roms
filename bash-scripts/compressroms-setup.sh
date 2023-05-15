@@ -20,15 +20,15 @@ cd "$romsoutputvar"
 mkdir -p \
 "Nintendo GameCube"\
 "Nintendo Wii"\
-"Playstation 2/OpenPS2Loader/APPS"\
-"Playstation 2/OpenPS2Loader/ART"\
-"Playstation 2/OpenPS2Loader/CD"\
-"Playstation 2/OpenPS2Loader/CFG"\
-"Playstation 2/OpenPS2Loader/CHT"\
-"Playstation 2/OpenPS2Loader/DVD"\
-"Playstation 2/OpenPS2Loader/LNG"\
-"Playstation 2/OpenPS2Loader/POPS"\
-"Playstation 2/OpenPS2Loader/THM"\
-"Playstation 2/OpenPS2Loader/VMC"
+"PlayStation 2/OpenPS2Loader/APPS"\
+"PlayStation 2/OpenPS2Loader/ART"\
+"PlayStation 2/OpenPS2Loader/CD"\
+"PlayStation 2/OpenPS2Loader/CFG"\
+"PlayStation 2/OpenPS2Loader/CHT"\
+"PlayStation 2/OpenPS2Loader/DVD"\
+"PlayStation 2/OpenPS2Loader/LNG"\
+"PlayStation 2/OpenPS2Loader/POPS"\
+"PlayStation 2/OpenPS2Loader/THM"\
+"PlayStation 2/OpenPS2Loader/VMC"
 
 echo Might need relogin. You are ready to run compressroms.

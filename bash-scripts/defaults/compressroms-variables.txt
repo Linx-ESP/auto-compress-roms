@@ -5,15 +5,15 @@ zso_py_dir="/media/games/scripts/opl-ziso.py"
 [Input-Paths]
 roms-import=
 
-gamecube-input="/path/to/import/gc/roms"
-wii-input="/path/to/import/wii/roms"
+gamecube-input="${roms-import}/gc"
+wii-input="${roms-import}/wii"
 
-ps2-input="/path/to/import/ps2/roms"
+ps2-input="${roms-import}/ps2"
 
 [Output-Paths]
 roms-output=
 
-gamecube-output="/where/to/storage/gc/roms"
-wii-output="/where/to/storage/gc/roms"
+gamecube-output="${roms-output}/Nintendo GameCube"
+wii-output="${roms-output}/Nintendo Wii"
 
-ps2-output="/where/to/storage/gc/roms"
+ps2-output="${roms-output}/PlayStation 2/OpenPS2Loader/DVD"
