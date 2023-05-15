@@ -12,5 +12,4 @@ if [[ "$1" == "" ]]; then
         "
 else
     sed -i 's/^$1=.*/$1=$2/' /media/games/scripts/compressroms-variables.txt
-
-
+fi
