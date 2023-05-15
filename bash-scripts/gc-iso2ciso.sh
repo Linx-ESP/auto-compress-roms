@@ -19,10 +19,10 @@ discid=${result:0:3}
 
   if [ "$discid" == "00" ]; then                       # For Disc 1 - ID'd as 00
       wit copy --ciso "$f" "$ciso_dir/%I/game.ciso"       # change copy to convert for deleting the original file
-  else [ "$discid" == "01" ]; then                       # For Disc 2 - ID'd as 00
+  elif [ "$discid" == "01" ]; then                       # For Disc 2 - ID'd as 00
       wit copy --ciso "$f" "$ciso_dir/%I/disc2.ciso"      # change copy to convert for deleting the original file
   else
-      echo "KIRBY"
+      echo "No disc number found"
   fi
 
   
