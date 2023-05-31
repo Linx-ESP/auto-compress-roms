@@ -1,9 +1,8 @@
-# Bing ChatGPT wrote this, seems to work.
 - name: Install python3, python3-pip, lz4 pip module, p7zip-full, unzip and unp
   hosts: localhost # same way as retronas
   tasks:
     - name: Install python3, python3-pip, p7zip-full, unzip and unp
-      apt:
+      package:
         name:
           - python3
           - python3-pip
@@ -34,8 +33,23 @@
       args:
         chdir: /tmp/wit-v3.05a-r8638-x86_64 # Necesario al parecer
       become: true
-
-    # --------------- MAIN SCRIPTS ----------------------
+    #    # --------------- RVZ tools -------------------------
+    #    - name: Download RVZ tools tarball
+    #      get_url:
+    #        url: https://github.com/bodgit/rvz/releases/download/v1.0.3/rvz_1.0.3_linux_amd64.tar.gz
+    #        dest: /tmp/rvz_1.0.3_linux_amd64.tar.gz
+    #
+    #    - name: Extract RVZ tarball
+    #      unarchive:
+    #        src: /tmp/rvz_1.0.3_linux_amd64.tar.gz
+    #        dest: /tmp
+    #        remote_src: yes
+    #
+    #    - name: Install RVZ
+    #      command: "install -Dm 755 /tmp/rvz -t /usr/local/bin"
+    #      become: true
+    #
+    #    # --------------- MAIN SCRIPTS ----------------------
     - name: Create folder to storage scripts
       file:
         path: /media/games/scripts

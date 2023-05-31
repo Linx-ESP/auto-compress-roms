@@ -11,11 +11,11 @@ This scripts allow
 ## What it's meant to do
 
 - Take input file
-- .iso - reformat/compress
+  - .iso
+- Compress and output
   - GameCube: .ciso
   - Wii: .wbfs
   - PS2: .zso
-    - Might need a `.bin + .cue to .iso` first
   - ...
 - Take compressed rom and move it to the correct folder (meant for games over SMB or loaders that require certain folder structure).
 - Keeps original .iso (you can manually edit the script to delete)
@@ -26,8 +26,6 @@ This scripts allow
   - From extracted/folder format and .iso
   - Compatible with OG Xbox too (playing OG Xbox games on X360 console)
 - CEMU: .wua
-- Dolphin: `.rvz` [¿Not possible in headless server?]
-  - `NKit` via Mono, seems to be less used than .rvz, not a priority
 - NDS + 3DS: `trimm .nds & .3ds`
   - Usually you do this at the time of dumping, might not do it.
 
@@ -91,23 +89,19 @@ You can point certains folder to a removable drive, such as a usb hard drive for
   - `pip3` + lz4
 - Wii/GameCube
   - [Wimm's ISO Tools](https://wit.wiimm.de/)
+  - [This RVZ tool](https://github.com/bodgit/rvz)
 
 ### TO DO
 
 - Setup individiual path in a more interactive way
-- First time setup for folder structure
-- Run at folder change
+  - Full TUI
+- Dolphin .rvz support improved
 - Integrate with cockpit
 
 ## More info
 
 - It could be done so it identifies the console and executes the correct script/conversion by itself using Redump and No-Intro hashes, requiring only one input folder. But that's above what I can do.
 - Nkit seems viable via Mono on Linux, but doesn't seem to be widely use today. I'll probably not integrated it here.
-- .rvz requires Dolphin. Haven't be able to install it in a headless server, will check again sometime.
-- [Script-Server](https://github.com/bugy/script-server) and [Unpackrr](https://github.com/Unpackerr/unpackerr) might be useful.
+- [Script-Server](https://github.com/bugy/script-server) might be useful.
   - [RetroNAS](https://github.com/danmons/retronas) caused me issues as I use my NAS for more than that, but useful for a dedicated server.
-- Might end up in a docker container, probably if I add Dolphin support. For now, ansible + bash scripts go brrr...
-
-```
-
-```
+- Might end up in a docker container, probably if I add full Dolphin support. For now, ansible + bash scripts go brrr...
