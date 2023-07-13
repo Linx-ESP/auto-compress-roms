@@ -20,9 +20,9 @@ discid=${resultnospace:0:2}
 echo ${discid}
 
 
-  if [ "echo ${discid}" == "00" ]; then                       # For Disc 1 - ID'd as 00
+  if [ "${discid}" == "00" ]; then                       # For Disc 1 - ID'd as 00
       wit copy --ciso "$f" "$gamecube_output/%I/game.ciso"       # change copy to convert for deleting the original file
-  elif [ "echo ${discid}" == "01" ]; then                       # For Disc 2 - ID'd as 00
+  elif [ "${discid}" == "01" ]; then                       # For Disc 2 - ID'd as 00
       wit copy --ciso "$f" "$gamecube_output/%I/disc2.ciso"      # change copy to convert for deleting the original file
   else
       echo "No disc info found"
