@@ -4,7 +4,7 @@
 
 Most emulators or consoles allow to use different formats for games so you don't have to storage a full 8GB from a DVD since most of it will be blank.
 
-This scripts allow
+You will probably want to use [Nkit2](https://github.com/Nanook/NKit) once it releases.
 
 ##### I will try to properly comment the code with sources and reasoning for those who want to work or fork it.
 
